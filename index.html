@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Packing Checklist</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">A LITTLE PLANNING, A CALMER TRIP</p>
+      <h1>Packing Checklist</h1>
+      <p>Make it your list. Pack at your pace.</p>
+    </header>
+
+    <section class="card" aria-labelledby="list-heading">
+      <h2 id="list-heading">My packing list</h2>
+      <div class="progress-copy">
+        <label for="packing-progress">Packing progress</label>
+        <strong id="progress-text" role="status">0% packed · 0 of 6 items</strong>
+      </div>
+      <progress id="packing-progress" max="100" value="0">0%</progress>
+      <p class="instructions">Check what you have packed. Edit any name in its text field.</p>
+
+      <form id="add-item-form">
+        <label for="new-item">Add something you need</label>
+        <div class="add-row">
+          <input id="new-item" type="text" placeholder="e.g., Rain jacket" maxlength="80" required>
+          <button type="submit">Add item</button>
+        </div>
+      </form>
+
+      <ul id="packing-list" class="item-list" aria-label="Items to pack"></ul>
+      <p id="empty-message" hidden>Your list is empty. Add an item above to get started.</p>
+      <button id="reset-button" class="secondary" type="button">Uncheck all</button>
+    </section>
+
+    <section class="card suggestions" aria-labelledby="suggestions-heading">
+      <p class="eyebrow">BEFORE YOU ZIP YOUR BAG</p>
+      <h2 id="suggestions-heading">Anything you forgot?</h2>
+      <p class="instructions">Edit a suggestion if needed, then add it to your list above. Only take what fits your trip.</p>
+      <ul id="suggestion-list" class="item-list" aria-label="Suggested items"></ul>
+      <p id="suggestions-empty" hidden>All suggestions are in your list. You can still add your own items above.</p>
+    </section>
+
+    <footer>
+      <p>Your checklist is yours to change.</p>
+      <p id="save-note" class="note">Your list saves automatically in this browser.</p>
+      <a href="source.html">View the code</a>
+    </footer>
+    <p id="action-message" class="visually-hidden" role="status"></p>
+    <noscript><p>Please enable JavaScript to use the editable checklist.</p></noscript>
+  </main>
+</body>
+</html>
