@@ -1,0 +1,52 @@
+/* Include padding and borders in each element's width. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 44px 20px;
+  background: #f7f3e8;
+  color: #283d30;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+main { max-width: 680px; margin: 0 auto; }
+header { margin-bottom: 28px; }
+.eyebrow { font-size: 11px; font-weight: bold; letter-spacing: 2px; }
+h1 { margin: 8px 0; color: #28543b; font-size: clamp(32px, 7vw, 44px); line-height: 1.15; }
+h2 { margin: 0 0 16px; color: #28543b; font-size: 12px; line-height: 1.3; }
+header p { margin: 12px 0; }
+.card { margin-bottom: 24px; padding: 26px; border: 1px solid #bac8b3; border-radius: 16px; background: #fffdf6; }
+.suggestions { background: #edf1e5; }
+.progress-copy { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-size: 13px; }
+progress { display: block; width: 100%; height: 14px; margin: 9px 0 18px; border: 0; border-radius: 20px; overflow: hidden; background: #dce3d4; accent-color: #28543b; }
+progress::-webkit-progress-bar { background: #dce3d4; border-radius: 20px; }
+progress::-webkit-progress-value { background: #28543b; border-radius: 20px; }
+progress::-moz-progress-bar { background: #28543b; border-radius: 20px; }
+.instructions { margin: 0 0 20px; font-size: 14px; }
+#add-item-form > label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: bold; }
+.add-row { display: flex; gap: 8px; }
+input[type="text"] { min-width: 0; width: 100%; border: 1px solid #a7b69f; border-radius: 6px; padding: 10px; color: #283d30; background: #fffef9; font: inherit; }
+.item-list { list-style: none; margin: 20px 0; padding: 0; }
+.item-row { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid #dbe1d3; }
+.item-name { flex: 1; }
+input[type="checkbox"] { width: 22px; height: 22px; flex-shrink: 0; margin: 0; accent-color: #28543b; cursor: pointer; }
+/* JavaScript adds this class when an item is packed. */
+.packed .item-name { text-decoration: line-through; color: #60715e; background: #f0f3e9; }
+button { flex-shrink: 0; padding: 11px 15px; border: 1px solid #28543b; border-radius: 7px; background: #28543b; color: white; font: inherit; font-size: 14px; cursor: pointer; }
+button:hover { background: #193c28; }
+.secondary { background: transparent; color: #28543b; }
+.secondary:hover { background: #e3eadb; }
+.remove-button { min-height: 40px; padding: 8px 10px; background: transparent; border-color: #bac8b3; color: #28543b; font-size: 12px; }
+.remove-button:hover { background: #e3eadb; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #947022; outline-offset: 3px; }
+footer { margin-top: 20px; font-size: 14px; }
+.note { font-size: 12px; color: #52614c; }
+a { color: #28543b; text-underline-offset: 3px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 480px) {
+  body { padding: 28px 14px; }
+  .card { padding: 18px; }
+  .suggestions .item-row { flex-wrap: wrap; }
+  .suggestions .item-name { flex-basis: 100%; }
+  .add-row { flex-wrap: wrap; }
+  .add-row button { width: 100%; }
+}
