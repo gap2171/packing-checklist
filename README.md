@@ -1,31 +1,39 @@
 # Packing Checklist
 
-An introductory webpage project by Gillian Parris, created with ChatGPT/Codex assistance.
+My name is Gillian Parris, and this is my packing checklist webpage for the Designing the Structure and Style of an Interactive Experience assignment.
 
-## Design decisions
+[Open my webpage](https://gap2171.github.io/packing-checklist/)
 
-Gillian chose the packing checklist concept and green-and-cream colors. After reviewing the first version, she requested editable items, adding custom items, editable suggestions that move into the main list, and a completion percentage. Codex generated the code and suggested browser-local saving and clearer Remove buttons.
+## My idea
 
-## Files
+I wanted to make something simple that people could actually use before a trip. I chose green and cream because I wanted the page to feel calm and outdoorsy.
 
-- `index.html`: semantic HTML structure and controls.
-- `style.css`: colors, spacing, typography, and responsive layout.
-- `script.js`: adding, editing, removing, suggestion transfer, progress, and localStorage.
-- `source.html`: readable source code view.
+My first version was a basic checklist. After looking at it, I wanted people to be able to add their own items and edit the ones already there. I also wanted suggestions at the bottom that they could edit and add to their list, plus a bar showing how much they had packed.
 
-## Use
+## What my page does
 
-Open `index.html` in a browser, or visit the GitHub Pages site once enabled. No installation or build step is needed.
+- Add, edit, remove, and check off packing items.
+- Edit suggestions and add them to the main list.
+- Show the percentage of items packed.
+- Uncheck all items without deleting the list.
+- Save changes in the same browser after a refresh.
 
-Changes save in the same browser. They do not sync between devices. Clearing browser data removes them. When browser storage is unavailable, the page displays a notice and still works for the current visit.
+The saved list does not carry over to another browser or device. Clearing browser data removes it.
 
-## Tested with browser controls
+## My files
 
-- Add a custom item; edit an existing name.
-- Edit a suggestion and transfer it to the main list.
-- Check items and verify the progress calculation (1 of 8 = 13%, rounded).
-- Uncheck all while keeping list items.
-- Add and check an item, reload, and verify persistence.
-- Remove the temporary test item.
+- `index.html` is the HTML code for the page's structure and controls.
+- `style.css` is the CSS code for the colors, spacing, and layout.
+- `script.js` is the JavaScript code for the editing, progress bar, suggestions, and saving.
+- `README.md` is this explanation of my project. It is not code that runs the webpage.
+- `source.html` is an optional page showing the code in a readable format.
 
-HTML and CSS form the assignment foundation. JavaScript is an extra for the requested interactions. The project uses AI-generated code and does not claim independent student authorship of that code.
+## How I used AI
+
+I used ChatGPT/Codex to generate the HTML, CSS, and JavaScript from my requests and help test the page. I chose the idea, colors, and the changes I wanted after reviewing the first version. I accepted its suggestions to save the list automatically and use the word Remove instead of an X.
+
+I am still learning how the code works. HTML and CSS are the assignment's foundation; the JavaScript adds the interactions I requested.
+
+## Checks and next ideas
+
+I used Codex to check adding and editing items, moving a suggestion into the list, updating the percentage, and keeping progress after refreshing. One packed item out of eight showed 13%, which is rounded. I could expand this later with separate lists for different trips.
