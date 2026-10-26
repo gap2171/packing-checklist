@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Packing Checklist Source</title><style>body{font:16px/1.6 Arial,sans-serif;margin:30px auto;padding:0 20px;max-width:900px;background:#f7f3e8;color:#283d30}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#fffdf6;padding:20px;border:1px solid #bac8b3}a{color:#28543b}</style><main><a href="index.html">Back to checklist</a><h1>Packing checklist code</h1><p>Created with Codex assistance. HTML defines the page, CSS styles it, and JavaScript handles editing, suggestions, saving, and progress.</p><h2>index.html</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Packing Checklist&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;script src=&quot;script.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;header&gt;
+      &lt;p class=&quot;eyebrow&quot;&gt;A LITTLE PLANNING, A CALMER TRIP&lt;/p&gt;
+      &lt;h1&gt;Packing Checklist&lt;/h1&gt;
+      &lt;p&gt;Make it your list. Pack at your pace.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;card&quot; aria-labelledby=&quot;list-heading&quot;&gt;
+      &lt;h2 id=&quot;list-heading&quot;&gt;My packing list&lt;/h2&gt;
+      &lt;div class=&quot;progress-copy&quot;&gt;
+        &lt;label for=&quot;packing-progress&quot;&gt;Packing progress&lt;/label&gt;
+        &lt;strong id=&quot;progress-text&quot; role=&quot;status&quot;&gt;0% packed · 0 of 6 items&lt;/strong&gt;
+      &lt;/div&gt;
+      &lt;progress id=&quot;packing-progress&quot; max=&quot;100&quot; value=&quot;0&quot;&gt;0%&lt;/progress&gt;
+      &lt;p class=&quot;instructions&quot;&gt;Check what you have packed. Edit any name in its text field.&lt;/p&gt;
+
+      &lt;form id=&quot;add-item-form&quot;&gt;
+        &lt;label for=&quot;new-item&quot;&gt;Add something you need&lt;/label&gt;
+        &lt;div class=&quot;add-row&quot;&gt;
+          &lt;input id=&quot;new-item&quot; type=&quot;text&quot; placeholder=&quot;e.g., Rain jacket&quot; maxlength=&quot;80&quot; required&gt;
+          &lt;button type=&quot;submit&quot;&gt;Add item&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+
+      &lt;ul id=&quot;packing-list&quot; class=&quot;item-list&quot; aria-label=&quot;Items to pack&quot;&gt;&lt;/ul&gt;
+      &lt;p id=&quot;empty-message&quot; hidden&gt;Your list is empty. Add an item above to get started.&lt;/p&gt;
+      &lt;button id=&quot;reset-button&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Uncheck all&lt;/button&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;card suggestions&quot; aria-labelledby=&quot;suggestions-heading&quot;&gt;
+      &lt;p class=&quot;eyebrow&quot;&gt;BEFORE YOU ZIP YOUR BAG&lt;/p&gt;
+      &lt;h2 id=&quot;suggestions-heading&quot;&gt;Anything you forgot?&lt;/h2&gt;
+      &lt;p class=&quot;instructions&quot;&gt;Edit a suggestion if needed, then add it to your list above. Only take what fits your trip.&lt;/p&gt;
+      &lt;ul id=&quot;suggestion-list&quot; class=&quot;item-list&quot; aria-label=&quot;Suggested items&quot;&gt;&lt;/ul&gt;
+      &lt;p id=&quot;suggestions-empty&quot; hidden&gt;All suggestions are in your list. You can still add your own items above.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;footer&gt;
+      &lt;p&gt;Your checklist is yours to change.&lt;/p&gt;
+      &lt;p id=&quot;save-note&quot; class=&quot;note&quot;&gt;Your list saves automatically in this browser.&lt;/p&gt;
+      &lt;a href=&quot;source.html&quot;&gt;View the code&lt;/a&gt;
+    &lt;/footer&gt;
+    &lt;p id=&quot;action-message&quot; class=&quot;visually-hidden&quot; role=&quot;status&quot;&gt;&lt;/p&gt;
+    &lt;noscript&gt;&lt;p&gt;Please enable JavaScript to use the editable checklist.&lt;/p&gt;&lt;/noscript&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2>style.css</h2><pre><code>/* Include padding and borders in each element&#x27;s width. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 44px 20px;
+  background: #f7f3e8;
+  color: #283d30;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+main { max-width: 680px; margin: 0 auto; }
+header { margin-bottom: 28px; }
+.eyebrow { font-size: 11px; font-weight: bold; letter-spacing: 2px; }
+h1 { margin: 8px 0; color: #28543b; font-size: clamp(32px, 7vw, 44px); line-height: 1.15; }
+h2 { margin: 0 0 16px; color: #28543b; font-size: 12px; line-height: 1.3; }
+header p { margin: 12px 0; }
+.card { margin-bottom: 24px; padding: 26px; border: 1px solid #bac8b3; border-radius: 16px; background: #fffdf6; }
+.suggestions { background: #edf1e5; }
+.progress-copy { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-size: 13px; }
+progress { display: block; width: 100%; height: 14px; margin: 9px 0 18px; border: 0; border-radius: 20px; overflow: hidden; background: #dce3d4; accent-color: #28543b; }
+progress::-webkit-progress-bar { background: #dce3d4; border-radius: 20px; }
+progress::-webkit-progress-value { background: #28543b; border-radius: 20px; }
+progress::-moz-progress-bar { background: #28543b; border-radius: 20px; }
+.instructions { margin: 0 0 20px; font-size: 14px; }
+#add-item-form &gt; label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: bold; }
+.add-row { display: flex; gap: 8px; }
+input[type=&quot;text&quot;] { min-width: 0; width: 100%; border: 1px solid #a7b69f; border-radius: 6px; padding: 10px; color: #283d30; background: #fffef9; font: inherit; }
+.item-list { list-style: none; margin: 20px 0; padding: 0; }
+.item-row { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid #dbe1d3; }
+.item-name { flex: 1; }
+input[type=&quot;checkbox&quot;] { width: 22px; height: 22px; flex-shrink: 0; margin: 0; accent-color: #28543b; cursor: pointer; }
+/* JavaScript adds this class when an item is packed. */
+.packed .item-name { text-decoration: line-through; color: #60715e; background: #f0f3e9; }
+button { flex-shrink: 0; padding: 11px 15px; border: 1px solid #28543b; border-radius: 7px; background: #28543b; color: white; font: inherit; font-size: 14px; cursor: pointer; }
+button:hover { background: #193c28; }
+.secondary { background: transparent; color: #28543b; }
+.secondary:hover { background: #e3eadb; }
+.remove-button { min-height: 40px; padding: 8px 10px; background: transparent; border-color: #bac8b3; color: #28543b; font-size: 12px; }
+.remove-button:hover { background: #e3eadb; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #947022; outline-offset: 3px; }
+footer { margin-top: 20px; font-size: 14px; }
+.note { font-size: 12px; color: #52614c; }
+a { color: #28543b; text-underline-offset: 3px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 480px) {
+  body { padding: 28px 14px; }
+  .card { padding: 18px; }
+  .suggestions .item-row { flex-wrap: wrap; }
+  .suggestions .item-name { flex-basis: 100%; }
+  .add-row { flex-wrap: wrap; }
+  .add-row button { width: 100%; }
+}
+</code></pre><h2>script.js</h2><pre><code>// Each packing item has a name and a packed state.
+let items = [
+  { name: &quot;Clothes&quot;, packed: false },
+  { name: &quot;Comfortable shoes&quot;, packed: false },
+  { name: &quot;Toothbrush and toothpaste&quot;, packed: false },
+  { name: &quot;Phone charger&quot;, packed: false },
+  { name: &quot;Water bottle&quot;, packed: false },
+  { name: &quot;Wallet and ID&quot;, packed: false }
+];
+let suggestions = [&quot;Sunscreen&quot;, &quot;Headphones&quot;, &quot;Rain jacket&quot;, &quot;Travel documents&quot;];
+
+// localStorage remembers this browser&#x27;s list between visits.
+const storageKey = &quot;packing-checklist-v1&quot;;
+let storageAvailable = true;
+try {
+  const saved = JSON.parse(localStorage.getItem(storageKey));
+  if (saved &amp;&amp; Array.isArray(saved.items) &amp;&amp; Array.isArray(saved.suggestions)
+      &amp;&amp; saved.items.every(item =&gt; item &amp;&amp; typeof item.name === &quot;string&quot; &amp;&amp; typeof item.packed === &quot;boolean&quot;)
+      &amp;&amp; saved.suggestions.every(name =&gt; typeof name === &quot;string&quot;)) {
+    items = saved.items;
+    suggestions = saved.suggestions;
+  }
+} catch (error) {
+  storageAvailable = false;
+}
+
+function saveList() {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify({ items, suggestions }));
+  } catch (error) {
+    storageAvailable = false;
+  }
+  document.querySelector(&quot;#save-note&quot;).textContent = storageAvailable
+    ? &quot;Your list saves automatically in this browser. Clearing browser data removes it.&quot;
+    : &quot;Saving is unavailable in this browser. Keep this page open to retain your changes.&quot;;
+}
+
+const packingList = document.querySelector(&quot;#packing-list&quot;);
+const suggestionList = document.querySelector(&quot;#suggestion-list&quot;);
+const newItem = document.querySelector(&quot;#new-item&quot;);
+const actionMessage = document.querySelector(&quot;#action-message&quot;);
+
+// Progress is packed items divided by all items, converted to a percentage.
+function updateProgress() {
+  const packed = items.filter(item =&gt; item.packed).length;
+  const percent = items.length === 0 ? 0 : Math.round(packed / items.length * 100);
+  document.querySelector(&quot;#packing-progress&quot;).value = percent;
+  document.querySelector(&quot;#progress-text&quot;).textContent =
+    `${percent}% packed · ${packed} of ${items.length} items`;
+  saveList();
+}
+
+// A text field lets visitors rename an item directly.
+function makeNameField(name, label, saveName) {
+  const field = document.createElement(&quot;input&quot;);
+  field.type = &quot;text&quot;;
+  field.className = &quot;item-name&quot;;
+  field.value = name;
+  field.maxLength = 80;
+  field.setAttribute(&quot;aria-label&quot;, label);
+  field.addEventListener(&quot;change&quot;, () =&gt; {
+    const updatedName = field.value.trim();
+    if (updatedName === &quot;&quot;) {
+      field.value = name;
+      return;
+    }
+    name = updatedName;
+    saveName(updatedName);
+    saveList();
+  });
+  return field;
+}
+
+// Draw the main list from the items array.
+function renderPackingList() {
+  packingList.replaceChildren();
+  items.forEach((item, index) =&gt; {
+    const row = document.createElement(&quot;li&quot;);
+    row.className = &quot;item-row&quot;;
+    row.classList.toggle(&quot;packed&quot;, item.packed);
+
+    const checkbox = document.createElement(&quot;input&quot;);
+    checkbox.type = &quot;checkbox&quot;;
+    checkbox.checked = item.packed;
+    checkbox.setAttribute(&quot;aria-label&quot;, `Mark ${item.name} as packed`);
+    checkbox.addEventListener(&quot;change&quot;, () =&gt; {
+      item.packed = checkbox.checked;
+      row.classList.toggle(&quot;packed&quot;, item.packed);
+      updateProgress();
+    });
+
+    const nameField = makeNameField(item.name, `Edit packing item ${index + 1}`, name =&gt; {
+      item.name = name;
+      checkbox.setAttribute(&quot;aria-label&quot;, `Mark ${name} as packed`);
+      removeButton.setAttribute(&quot;aria-label&quot;, `Remove ${name}`);
+    });
+
+    const removeButton = document.createElement(&quot;button&quot;);
+    removeButton.type = &quot;button&quot;;
+    removeButton.className = &quot;remove-button&quot;;
+    removeButton.textContent = &quot;Remove&quot;;
+    removeButton.setAttribute(&quot;aria-label&quot;, `Remove ${item.name}`);
+    removeButton.addEventListener(&quot;click&quot;, () =&gt; {
+      items.splice(index, 1);
+      renderPackingList();
+      const nextField = packingList.querySelectorAll(&quot;.item-name&quot;)[Math.min(index, items.length - 1)];
+      (nextField || newItem).focus();
+      actionMessage.textContent = `${item.name} removed from your list.`;
+    });
+
+    row.append(checkbox, nameField, removeButton);
+    packingList.append(row);
+  });
+  document.querySelector(&quot;#empty-message&quot;).hidden = items.length &gt; 0;
+  document.querySelector(&quot;#reset-button&quot;).disabled = items.length === 0;
+  updateProgress();
+}
+
+// Each suggestion can be edited and then moved into the main list.
+function renderSuggestions() {
+  suggestionList.replaceChildren();
+  suggestions.forEach((suggestion, index) =&gt; {
+    const row = document.createElement(&quot;li&quot;);
+    row.className = &quot;item-row&quot;;
+    const nameField = makeNameField(suggestion, `Edit suggestion ${index + 1}`, name =&gt; {
+      suggestions[index] = name;
+    });
+    const addButton = document.createElement(&quot;button&quot;);
+    addButton.type = &quot;button&quot;;
+    addButton.className = &quot;secondary&quot;;
+    addButton.textContent = &quot;Add to my list ↑&quot;;
+    addButton.addEventListener(&quot;click&quot;, () =&gt; {
+      const name = suggestions[index];
+      items.push({ name: name, packed: false });
+      suggestions.splice(index, 1);
+      renderPackingList();
+      renderSuggestions();
+      const addedField = packingList.lastElementChild.querySelector(&quot;.item-name&quot;);
+      addedField.focus();
+      actionMessage.textContent = `${name} added to your packing list.`;
+    });
+    row.append(nameField, addButton);
+    suggestionList.append(row);
+  });
+  document.querySelector(&quot;#suggestions-empty&quot;).hidden = suggestions.length &gt; 0;
+}
+
+// Submitting the form adds a new, unpacked item without reloading the page.
+document.querySelector(&quot;#add-item-form&quot;).addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+  const name = newItem.value.trim();
+  if (name === &quot;&quot;) {
+    newItem.value = &quot;&quot;;
+    newItem.focus();
+    return;
+  }
+  items.push({ name: name, packed: false });
+  renderPackingList();
+  newItem.value = &quot;&quot;;
+  newItem.focus();
+  actionMessage.textContent = `${name} added to your packing list.`;
+});
+
+document.querySelector(&quot;#reset-button&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  items.forEach(item =&gt; item.packed = false);
+  renderPackingList();
+});
+
+renderPackingList();
+renderSuggestions();
+</code></pre></main></html>
