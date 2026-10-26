@@ -12,7 +12,7 @@ main { max-width: 680px; margin: 0 auto; }
 header { margin-bottom: 28px; }
 .eyebrow { font-size: 11px; font-weight: bold; letter-spacing: 2px; }
 h1 { margin: 8px 0; color: #28543b; font-size: clamp(32px, 7vw, 44px); line-height: 1.15; }
-h2 { margin: 0 0 16px; color: #28543b; font-size: 12px; line-height: 1.3; }
+h2 { margin: 0 0 16px; color: #28543b; font-size: 23px; line-height: 1.3; }
 header p { margin: 12px 0; }
 .card { margin-bottom: 24px; padding: 26px; border: 1px solid #bac8b3; border-radius: 16px; background: #fffdf6; }
 .suggestions { background: #edf1e5; }
